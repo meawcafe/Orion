@@ -1,0 +1,13 @@
+.white-theme {
+  --accent-color1: #feaec4;
+  --accent-color2: #feecd5;
+
+  --background1: #fff;
+  --background2: #ececec;
+  --background3: #e2e2e2;
+
+  --text1: #222222;
+  --text2: #444444;
+  --text3: #666666;
+  --text4: #888888;
+}
