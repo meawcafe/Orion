@@ -2,39 +2,23 @@ import { useEffect, useState } from "react";
 import { formatCurrency } from "../../utils/formatCurrency";
 import ActionButton from "../ActionButton";
 import { ShoppingCart } from "@phosphor-icons/react";
+import getUnsplashImage from "../../services/getUnsplashImage";
 
-const CartItem = ({ product_name }) => {
+const CartItem = ({ item }) => {
   const [imageUrl, setImageUrl] = useState(null);
   const [name, setName] = useState("");
 
-  async function getUnsplashImage() {
-    try {
-      const response = await fetch(
-        `https://source.unsplash.com/featured/?${name}`
-      );
-      const imageUrl = response.url;
-
-      if (imageUrl.includes("source-404")) {
-        throw new Error("Nenhuma imagem relacionada encontrada");
-      }
-
-      setImageUrl(imageUrl);
-    } catch (error) {
-      console.error("Erro ao obter a imagem:", error);
-      return null;
-    }
-  }
-
   useEffect(() => {
-    getUnsplashImage();
-    setName(product_name);
-  }, [product_name]);
+    getUnsplashImage(item.name).then((image_url) => setImageUrl(image_url));
+    setName(item.name);
+  }, [item.name]);
 
   return (
     <div
+      className="animation-on-press"
       style={{
         flexDirection: "row",
-        backgroundColor: "var(--background1)",
+        backgroundColor: "var(--background2)",
         padding: "0.5rem",
         borderRadius: "1.2rem",
         width: "100%",

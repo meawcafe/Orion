@@ -1,10 +1,8 @@
-import {
-  ArrowLeft,
-  Info
-} from "@phosphor-icons/react";
+import { ArrowLeft, Info } from "@phosphor-icons/react";
 import NavbarButton from "./NavbarButton";
 
-const TopNavbar = ({ show_cart, setShowCart }) => {
+const TopNavbar = ({ current_page }) => {
+  console.log(current_page);
   return (
     <div
       style={{
@@ -31,10 +29,7 @@ const TopNavbar = ({ show_cart, setShowCart }) => {
             }}
           />
         </div>
-        <span
-        >
-          Lista de compras
-        </span>
+        <span>{current_page.name}</span>
         <div>
           <NavbarButton
             {...{

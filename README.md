@@ -6,5 +6,6 @@
 Orion is a user-friendly mobile application designed to simplify the process of organizing shopping lists. It allows users to create custom shopping lists and add items that need to be purchased. Once all the items in a particular list have been added to the shopping cart, Orion calculates and displays the total amount to be paid.
 
 <p align="center">
-  <img src="https://i.imgur.com/RdsGK4j.png" alt="Orion">
+  <img src="./demo.gif" alt="windowing system" style="border-radius: 10px;">
 </p>
+

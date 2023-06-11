@@ -18,10 +18,23 @@ div {
   display: flex;
 }
 
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
 span, p, h1, h2, h3, h4, h5 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.nowrap-2-lines {
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
 
 * {
@@ -58,6 +71,25 @@ input:focus, textarea:focus {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+form input {
+  font-size: 1.1rem;
+  padding: 0.8rem 1.2rem;
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+form textarea {
+  font-size: 1.1rem;
+  padding: 0.8rem 1.2rem;
+  background-color: rgba(0, 0, 0, 0.07);
+  text-align: left;
+}
+
+form input:focus, form textarea:focus {
+  padding: 0.8rem 1.2rem;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+
 textarea {
   font-size: 1.2rem;
   padding: 1rem;
@@ -67,4 +99,14 @@ textarea {
 
 textarea:focus {
   padding: 1rem;
+}
+
+.animation-on-press {
+  transition: 0.2s ease;
+}
+
+.animation-on-press:active {
+  transform: scale(0.96);
+  filter: brightness(1.05);
+  transition: 0s ease;
 }
